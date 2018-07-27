@@ -65,3 +65,13 @@ node_modules
 
 /coverage
 /third-party
+
+# Root dir shouldn't have Xcode project
+/*.xcodeproj
+
+# ReactCommon subdir shouldn't have Xcode project
+/ReactCommon/**/*.xcodeproj
+.classpath
+.project
+org.eclipse*
+*.bundle
