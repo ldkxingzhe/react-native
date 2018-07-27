@@ -16,6 +16,9 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.growingio.android.sdk.collection.Configuration;
+import com.growingio.android.sdk.collection.GrowingIO;
+import com.growingio.plugin.rnsdk.rnPackge.GrowingIOPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -42,10 +45,21 @@ public class RNTesterApplication extends Application implements ReactApplication
     @Override
     public List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage()
+        new MainReactPackage(), new GrowingIOPackage()
       );
     }
   };
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+
+    if (BuildConfig.hasGrowingIO){
+      GrowingIO.startWithConfiguration(this,
+        new Configuration().setDebugMode(true)
+          .setTestMode(true));
+    }
+  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {
