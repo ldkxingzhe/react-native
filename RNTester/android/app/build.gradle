@@ -1,4 +1,8 @@
 apply plugin: 'com.android.application'
+def hasGIO = true
+if (hasGIO){
+    apply plugin: 'com.growingio.android'
+}
 
 import com.android.build.OutputFile
 
@@ -95,6 +99,11 @@ android {
         ndk {
             abiFilters "armeabi-v7a", "x86"
         }
+
+        buildConfigField "boolean", "hasGrowingIO", hasGIO ? "true" : "false"
+
+        resValue("string", "growingio_project_id", "9926fc6c1189e2fb")
+        resValue("string", "growingio_url_scheme", "growing.1b9bb47881750867")
     }
     signingConfigs {
         release {
@@ -140,4 +149,6 @@ dependencies {
 
     // Build React Native from source
     compile project(':ReactAndroid')
+
+    compile 'com.growingio.android.test:t-vds-android-agent:RN-2.3.5-beta'
 }
