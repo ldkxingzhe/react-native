@@ -72,3 +72,7 @@ package-lock.json
 
 # ReactCommon subdir shouldn't have Xcode project
 /ReactCommon/**/*.xcodeproj
+.classpath
+.project
+org.eclipse*
+*.bundle
