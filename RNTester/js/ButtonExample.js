@@ -12,10 +12,15 @@
 
 const React = require('react');
 const ReactNative = require('react-native');
-const {Alert, Button, View} = ReactNative;
+const {Alert, Button, View, NativeModules} = ReactNative;
 
 const onButtonPress = () => {
   Alert.alert('Button has been pressed!');
+};
+
+const onBtnSetVisitorVar = () => {
+  console.log('您点击了setVisitorVar按钮');
+  NativeModules.GrowingIO.setVisitor({'testKey': 'testValue'});
 };
 
 exports.displayName = 'ButtonExample';
@@ -40,6 +45,20 @@ exports.examples = [
       );
     },
   },
+
+    {
+      title: 'set visitorVar',
+      description: 'GrowingIO 的setVisitorVar()',
+      render: function() {
+        return (
+          <Button
+            onPress={onBtnSetVisitorVar}
+            title="set VisiitorVar 触发"
+            accessibilityLabel="See an informative alert"
+          />
+        );
+      },
+    },
   {
     title: 'Adjusted color',
     description:

@@ -14,9 +14,9 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.growingio.android.plugin.rn.GrowingIOPackage;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
-import com.growingio.plugin.rnsdk.rnPackge.GrowingIOPackage;
 
 import java.util.Arrays;
 import java.util.List;
