@@ -151,5 +151,5 @@ dependencies {
     // Build React Native from source
     compile project(':ReactAndroid')
 
-    compile 'com.growingio.android.test:t-vds-android-agent:RN-2.3.5-beta'
+    compile 'com.growingio.android.test:t-vds-android-agent:RN-autotrack-2.5.0-beta'
 }

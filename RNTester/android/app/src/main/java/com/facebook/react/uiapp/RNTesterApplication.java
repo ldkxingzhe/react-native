@@ -17,6 +17,7 @@ import com.facebook.react.shell.MainReactPackage;
 import com.growingio.android.plugin.rn.GrowingIOPackage;
 import com.growingio.android.sdk.collection.Configuration;
 import com.growingio.android.sdk.collection.GrowingIO;
+import com.growingio.plugin.rnsdk.agent.RnVdsAgent;
 
 import java.util.Arrays;
 import java.util.List;

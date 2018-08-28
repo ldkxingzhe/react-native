@@ -12,7 +12,7 @@
 
 const React = require('react');
 const ReactNative = require('react-native');
-const {Alert, Button, View, NativeModules} = ReactNative;
+const {Alert, Button, View, NativeModules, Text} = ReactNative;
 
 const onButtonPress = () => {
   Alert.alert('Button has been pressed!');
@@ -29,7 +29,7 @@ exports.title = '<Button>';
 exports.description = 'Simple React Native button component.';
 
 exports.examples = [
-  {
+/*  {
     title: 'Simple Button',
     description:
       'The title and onPress handler are required. It is ' +
@@ -44,21 +44,29 @@ exports.examples = [
         />
       );
     },
-  },
+  },*/
 
     {
       title: 'set visitorVar',
       description: 'GrowingIO 的setVisitorVar()',
       render: function() {
         return (
-          <Button
-            onPress={onBtnSetVisitorVar}
-            title="set VisiitorVar 触发"
-            accessibilityLabel="See an informative alert"
-          />
+        <View
+        growingParams={{ignore: "true"}}
+        >
+                  <Button
+                    onPress={onBtnSetVisitorVar}
+                    title="set VisiitorVar 触发"
+                    growingParams={{ ignore: "true" }}
+                    accessibilityLabel="See an informative alert"
+                  />
+                  <Text
+                  growingParams={{ignore: "true"}}
+                  >测试点击事件</Text>
+        </View>
         );
       },
-    },
+    }/*,
   {
     title: 'Adjusted color',
     description:
@@ -111,5 +119,5 @@ exports.examples = [
         />
       );
     },
-  },
+  },*/
 ];

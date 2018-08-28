@@ -15,7 +15,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:2.3.3'
         classpath 'de.undercouch:gradle-download-task:3.4.3'
-        classpath 'com.growingio.android.test:t-vds-gradle-plugin:RN-2.3.5-beta'
+        classpath 'com.growingio.android.test:t-vds-gradle-plugin:RN-autotrack-2.5.0-beta'
     }
 }
 
