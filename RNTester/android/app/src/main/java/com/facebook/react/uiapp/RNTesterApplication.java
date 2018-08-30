@@ -9,6 +9,7 @@
 package com.facebook.react.uiapp;
 
 import android.app.Application;
+import android.support.annotation.Nullable;
 
 import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
@@ -22,7 +23,6 @@ import com.growingio.plugin.rnsdk.agent.RnVdsAgent;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.annotation.Nullable;
 
 public class RNTesterApplication extends Application implements ReactApplication {
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -32,7 +32,8 @@ public class RNTesterApplication extends Application implements ReactApplication
     }
 
     @Override
-    public @Nullable String getBundleAssetName() {
+    public @Nullable
+    String getBundleAssetName() {
       return "RNTesterApp.android.bundle";
     }
 
