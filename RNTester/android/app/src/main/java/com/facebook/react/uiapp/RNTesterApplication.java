@@ -16,11 +16,12 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.growingio.android.plugin.rn.GrowingIOPackage;
+import com.growingio.android.sdk.collection.Configuration;
+import com.growingio.android.sdk.collection.GrowingIO;
 
 import java.util.Arrays;
 import java.util.List;
-
-import javax.annotation.Nullable;
 
 public class RNTesterApplication extends Application implements ReactApplication {
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -30,7 +31,7 @@ public class RNTesterApplication extends Application implements ReactApplication
     }
 
     @Override
-    public @Nullable String getBundleAssetName() {
+    public String getBundleAssetName() {
       return "RNTesterApp.android.bundle";
     }
 
@@ -42,10 +43,18 @@ public class RNTesterApplication extends Application implements ReactApplication
     @Override
     public List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
-        new MainReactPackage()
+        new MainReactPackage(), new GrowingIOPackage()
       );
     }
   };
+
+  @Override
+  public void onCreate() {
+    super.onCreate();
+    GrowingIO.startWithConfiguration(this,
+      new Configuration().setDebugMode(true)
+        .setTestMode(true));
+  }
 
   @Override
   public ReactNativeHost getReactNativeHost() {
